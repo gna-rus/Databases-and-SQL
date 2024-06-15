@@ -1,0 +1,10 @@
+# 2. Выведите только чётные числа от 1 до 10.
+# Пример: 2,4,6,8,10
+
+WITH Numbers AS (
+    SELECT 1 AS Value
+    UNION ALL
+    SELECT Value + 1 FROM Numbers WHERE Value < 10
+)
+SELECT Value FROM Numbers
+WHERE Value % 2 = 0;
